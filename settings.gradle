@@ -1,1 +1,7 @@
 rootProject.name = 'Blogger_You'
+
+include 'common'
+include 'core-module'
+include 'services'
+
+include 'services:board'
