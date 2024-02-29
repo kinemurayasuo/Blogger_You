@@ -4,4 +4,15 @@ include 'common'
 include 'core-module'
 include 'services'
 
-include 'services:board'
+include 'core-module:global-exception-handler'
+include 'core-module:gson'
+include 'core-module:jpa'
+include 'core-module:password-encoder'
+include 'core-module:redis'
+findProject('globalExceptionHandler')?.name = ('global-exception-handler')
+findProject('gson')?.name = ('gson')
+findProject('jpa')?.name = ('jpa')
+findProject('passwordEncoder')?.name = ('password-encoder')
+findProject('redis')?.name = ('redis')
+
+
