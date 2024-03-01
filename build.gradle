@@ -99,7 +99,7 @@ project(globalExceptionHandler) {
     }
 }
 
-project(gson) {
+project(redis) {
     dependencies {
         implementation common
         api 'org.springframework.boot:spring-boot-starter-data-redis'
