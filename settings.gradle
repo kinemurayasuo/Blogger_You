@@ -9,10 +9,28 @@ include 'core-module:gson'
 include 'core-module:jpa'
 include 'core-module:password-encoder'
 include 'core-module:redis'
+
 findProject('globalExceptionHandler')?.name = ('global-exception-handler')
 findProject('gson')?.name = ('gson')
 findProject('jpa')?.name = ('jpa')
 findProject('passwordEncoder')?.name = ('password-encoder')
 findProject('redis')?.name = ('redis')
 
-
+include 'services:board'
+include 'services:board:application'
+include 'services:board:data'
+include 'services:board:data:domain'
+include 'services:board:data:read-model'
+include 'services:board:driven-adapter'
+include 'services:board:driven-adapter:rdb-adapter'
+include 'services:board:driving-adapter'
+include 'services:board:driving-adapter:web-adapter'
+findProject('services:board')?.name = 'board'
+findProject('services:board:application')?.name = 'application'
+findProject('services:board:data')?.name = 'data'
+findProject('services:board:data:domain')?.name = 'domain'
+findProject('services:board:data:read-model')?.name = 'read-model'
+findProject('services:board:driven-adapter')?.name = 'driven-adapter'
+findProject('services:board:driven-adapter:rdb-adapter')?.name = 'rdb-adapter'
+findProject('services:board:driving-adapter')?.name = 'driving-adapter'
+findProject('services:board:driving-adapter:web-adapter')?.name = 'web-adapter'
