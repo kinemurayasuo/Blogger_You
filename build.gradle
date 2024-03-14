@@ -181,7 +181,7 @@ project(boardRdbAdapter) {
         api project(boardApplication)
 
         // PostgreSQL
-        runtimeOnly 'com.mysql:mysql-connector-j'
+        runtimeOnly 'org.postgresql:postgresql'
 
         // Map Struct
         implementation 'org.mapstruct:mapstruct:1.5.3.Final'
