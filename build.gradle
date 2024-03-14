@@ -93,6 +93,12 @@ project(':common') {
     }
 }
 
+project(jpa) {
+    dependencies {
+        api 'org.springframework.boot:spring-boot-starter-data-jpa'
+    }
+}
+
 project(globalExceptionHandler) {
     dependencies {
         implementation common
