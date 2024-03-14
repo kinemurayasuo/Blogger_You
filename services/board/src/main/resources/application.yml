@@ -1,0 +1,43 @@
+spring:
+  config:
+    import:
+      - app/cors/cors.yml #class path
+      - app/time/time.yml
+
+  application:
+    active: board-application
+
+  profiles:
+    active: prod
+
+  mvc:
+    converters:
+      preferred-json-mapper: gson
+
+  datasource:
+    url: jdbc:postgresql://url:8020/database
+    username: kimtaewoo
+    password: kimtaewoo
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connectionTimeout: 100_000
+      idleTimeout: 600000
+      maximum-pool-size: 300
+      minimum-idle: 5
+      maxLifetime: 10000
+      leak-detection-threshold: 2000
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    show-sql: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:/db/migration # ???
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB

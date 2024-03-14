@@ -122,3 +122,84 @@ project(passwordEncoder) {
         api 'org.springframework.boot:spring-boot-starter-data-jpa'
     }
 }
+
+// Board Service
+ project(boardService) {
+    dependencies {
+        implementation common
+        implementation globalExceptionHandlerProject
+        implementation gsonProject
+        implementation project(boardApplication)
+        implementation project(boardRdbAdapter)
+        implementation project(boardWebadapter)
+
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+        bootJar{
+            enabled = true
+        }
+    }
+}
+
+project(boardDomain) {
+    dependencies {
+        implementation common
+        // GSON
+        implementation 'com.google.code.gson:gson:2.10.1'
+    }
+}
+
+project(boardReadModel) {
+    dependencies {
+        implementation common
+        api project(boardDomain)
+        api project(boardReadModel)
+        implementation gsonProject
+    }
+}
+
+project(boardApplication) {
+    dependencies {
+        implementation common
+        api project(boardDomain)
+        api project(boardReadModel)
+        implementation gsonProject
+    }
+}
+
+project(boardRdbAdapter) {
+    dependencies {
+        implementation common
+        api project(jpa)
+        api project(boardApplication)
+
+        // PostgreSQL
+        runtimeOnly 'com.mysql:mysql-connector-j'
+
+        // Map Struct
+        implementation 'org.mapstruct:mapstruct:1.5.3.Final'
+        annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
+        annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+
+        // Flyway
+        implementation 'org.flywaydb:flyway-mysql'
+    }
+}
+
+project(boardWebadapter) {
+    dependencies {
+        implementation common
+        implementation gsonProject
+        implementation project(boardApplication)
+        implementation project(boardDomain)
+
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+        // Map Struct
+        implementation 'org.mapstruct:mapstruct:1.5.3.Final'
+        annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
+        annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+    }
+}
