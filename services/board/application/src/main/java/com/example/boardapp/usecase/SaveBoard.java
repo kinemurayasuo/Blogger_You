@@ -1,5 +1,8 @@
 package com.example.boardapp.usecase;
 
-public interface SaveBoard {
+import com.example.domain.DomainBoard;
 
+
+public interface SaveBoard {
+    DomainBoard saveBoard(DomainBoard domainBoard);
 }
