@@ -3,9 +3,9 @@ package com.example.boardapp.repository;
 import com.example.domain.DomainBoard;
 import com.example.readmodel.ReadModelBoard;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
-import java.awt.print.Pageable;
 import java.util.List;
 import java.util.Optional;
 

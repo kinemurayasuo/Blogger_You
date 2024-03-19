@@ -2,8 +2,8 @@ package com.example.boardapp.usecase;
 
 import com.example.domain.DomainBoard;
 import com.example.readmodel.ReadModelBoard;
+import org.springframework.data.domain.Pageable;
 
-import java.awt.print.Pageable;
 import java.util.List;
 
 public interface ReadBoard {

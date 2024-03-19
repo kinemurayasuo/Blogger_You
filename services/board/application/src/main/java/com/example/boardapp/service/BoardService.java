@@ -9,9 +9,9 @@ import com.example.boardapp.usecase.UpdateBoard;
 import com.example.domain.DomainBoard;
 import com.example.readmodel.ReadModelBoard;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Pageable;
 import java.util.List;
 
 @Service
@@ -28,10 +28,11 @@ public class BoardService implements
         return boardRepository.
                 findByBoard(title).orElseThrow(BoardErrorCode.BOARD_NOT_FOUND::defaultException);
     }
+
     @Override
     public List<ReadModelBoard> findAll(Pageable pageable) {return boardRepository.findAll(pageable);}
     @Override
     public DomainBoard saveBoard(DomainBoard domainBoard) {return boardRepository.saveBoard(domainBoard);}
     @Override
-    public boolean updateBoard(String title, String content) {return boardRepository.updateBoard(title,content);}
+    public boolean updateBoard(String userId, String title, String content) {return boardRepository.updateBoard(title,content);}
 }
