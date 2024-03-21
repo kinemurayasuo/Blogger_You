@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  postgres:
+  board_postgres_Blogger_You:
     image: 'postgres:latest'
     environment:
       - 'POSTGRES_DB=mydatabase'
@@ -9,13 +9,15 @@ services:
       - 'POSTGRES_USER=myuser'
     ports:
       - '5432'
+    volumes:
+      - sticky_volumes_board_postgresql:/var/lib/postgresql/data
 
-  common_standalone_redis7_eelloo:
+  common_standalone_redis7:
     image: redis:7.0
     ports:
       - 6379:6379
     volumes:
-      - sticky_volume_common_redis:/redis/data
+      - sticky_volumes_common_redis:/redis/data
       - ./config/redis.conf:/usr/local/conf/redis.conf
     # 컨테이너에 docker label을 이용해서 메타데이터 추가
     labels:
@@ -26,4 +28,5 @@ services:
 
 #volumes container
 volumes:
+  sticky_volumes_board_postgresql:
   sticky_volumes_common_redis:
