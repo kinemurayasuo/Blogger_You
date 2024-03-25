@@ -15,7 +15,7 @@ spring:
       preferred-json-mapper: gson
 
   datasource:
-    url: jdbc:postgresql://url:8020/database
+    url: jdbc:postgresql://localhost:5432/database
     username: kimtaewoo
     password: kimtaewoo
     driver-class-name: org.postgresql.Driver

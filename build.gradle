@@ -136,6 +136,7 @@ project(passwordEncoder) {
         implementation globalExceptionHandlerProject
         implementation gsonProject
         implementation project(boardApplication)
+        implementation project(boardData)
         implementation project(boardRdbAdapter)
         implementation project(boardWebadapter)
 
@@ -160,7 +161,6 @@ project(boardReadModel) {
     dependencies {
         implementation common
         api project(boardDomain)
-        api project(boardReadModel)
         implementation gsonProject
     }
 }

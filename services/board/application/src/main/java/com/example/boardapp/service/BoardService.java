@@ -22,7 +22,7 @@ public class BoardService implements
     private final BoardRepository boardRepository;
 
     @Override
-    public boolean deleteBoard(String id) {return boardRepository.deleteBoard(id);}
+    public boolean deleteBoard(String userid) {return boardRepository.deleteBoard(userid);}
     @Override
     public ReadModelBoard findByBoard(String title) {
         return boardRepository.

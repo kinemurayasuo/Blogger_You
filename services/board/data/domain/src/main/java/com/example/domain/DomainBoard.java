@@ -13,7 +13,7 @@ import java.time.Instant;
 @Data
 public class DomainBoard {
     public String id;
-    public Integer userId;
+    public String userId;
     public String title;
     public String content;
     public Instant boardWriteAt;

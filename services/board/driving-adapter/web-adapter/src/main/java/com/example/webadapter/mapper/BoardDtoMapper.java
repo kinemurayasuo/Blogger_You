@@ -9,6 +9,6 @@ import java.time.Instant;
 
 @Mapper
 public interface BoardDtoMapper {
-    @Mapping(target = "name", source = "dto.boardName")
+    @Mapping(target = "title", source = "dto.boardName")
     DomainBoard from(BoardSaveRequestDto dto, Instant now);
 }

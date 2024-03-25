@@ -12,7 +12,9 @@ public record BoardSaveDto() {
             @NotNull
             String title,
             @NotNull
-            String content
+            String content,
+            @NotNull
+            String boardName
     ) {}
     @Builder
     public record BoardSaveResponseDto(

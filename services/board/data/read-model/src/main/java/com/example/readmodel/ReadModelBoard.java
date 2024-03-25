@@ -4,7 +4,7 @@ import java.time.Instant;
 
 public record ReadModelBoard(
         String id,
-        Integer userId,
+        String userId,
         String title,
         String content,
         Instant boardWriteAt
