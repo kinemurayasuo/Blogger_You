@@ -15,6 +15,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("board")
@@ -38,11 +40,11 @@ public final class BoardControlApi {
         return boardUpdateProxyService.boardUpdate(userId, body.title(), body.content());
     }
 
-    @DeleteMapping("{userId}")
+    @DeleteMapping("{Id}")
     public BoardDeleteResponseDto deleteBoard(
-            @PathVariable String userId
+            @PathVariable UUID Id
     ) {
-        return boardDeleteProxyService.boardDelete(userId);
+        return boardDeleteProxyService.boardDelete(Id);
     }
 
 }

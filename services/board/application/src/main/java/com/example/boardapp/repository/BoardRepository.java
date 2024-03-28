@@ -8,11 +8,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 public interface BoardRepository {
     DomainBoard saveBoard(DomainBoard domainBoard);
     Optional<ReadModelBoard> findByBoard(String title);
     List<ReadModelBoard> findAll(Pageable pageable);
     boolean updateBoard(String title, String content);
-    boolean deleteBoard(String userid);
+    boolean deleteBoard(UUID id);
 }

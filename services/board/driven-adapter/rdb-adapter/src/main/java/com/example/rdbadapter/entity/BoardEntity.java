@@ -15,16 +15,12 @@ import java.util.UUID;
 @Builder
 @EqualsAndHashCode(callSuper = false)
 @ToString
-@Table(
-        schema = BoardSchemaConstants.SCHEMA,
-        catalog = BoardSchemaConstants.SCHEMA,
-        name = BoardSchemaConstants.TB_BOARD
-)
-public class BoardEntity extends UuidBaseEntity {
+@Data
+@Table(name = "board")
+public class BoardEntity extends BaseEntity {
     public String userId;
     public String title;
     public String content;
     @Builder.Default
     public Instant boardWriteAt = Instant.now();
-
 }

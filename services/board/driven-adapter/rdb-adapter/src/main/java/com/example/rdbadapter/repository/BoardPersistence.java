@@ -11,10 +11,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 @RequiredArgsConstructor
 public class BoardPersistence implements BoardRepository {
+
     private final BoardJpaRepository jpaRepository;
     private final BoardEntityMapper entityMapper;
 
@@ -46,10 +48,10 @@ public class BoardPersistence implements BoardRepository {
     }
 
     @Override
-    public boolean deleteBoard(String userid) {
-        boolean haveBoard = jpaRepository.existsById(Long.valueOf(userid));
+    public boolean deleteBoard(UUID id) {
+        boolean haveBoard = jpaRepository.existsById(id);
         if(!haveBoard) return false;
-        jpaRepository.deleteById(Long.valueOf(userid));
+        jpaRepository.deleteById(id);
         return true;
     }
 }

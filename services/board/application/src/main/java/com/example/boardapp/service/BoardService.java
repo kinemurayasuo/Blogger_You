@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -22,7 +23,7 @@ public class BoardService implements
     private final BoardRepository boardRepository;
 
     @Override
-    public boolean deleteBoard(String userid) {return boardRepository.deleteBoard(userid);}
+    public boolean deleteBoard(UUID id) {return boardRepository.deleteBoard(id);}
     @Override
     public ReadModelBoard findByBoard(String title) {
         return boardRepository.
