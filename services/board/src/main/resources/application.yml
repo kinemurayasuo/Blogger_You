@@ -1,3 +1,6 @@
+server:
+  port: 8020
+
 spring:
   config:
     import:
@@ -41,3 +44,7 @@ spring:
     multipart:
       max-file-size: 50MB
       max-request-size: 50MB
+
+  logging:
+    level:
+      root: debug
