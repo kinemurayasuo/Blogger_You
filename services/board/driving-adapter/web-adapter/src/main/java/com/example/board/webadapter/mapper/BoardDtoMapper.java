@@ -7,8 +7,10 @@ import org.mapstruct.Mapping;
 
 import java.time.Instant;
 
-@Mapper
+import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
+
+@Mapper(componentModel = SPRING)
 public interface BoardDtoMapper {
-    @Mapping(target = "title", source = "dto.boardName")
-    DomainBoard from(BoardSaveRequestDto dto, Instant now);
+    @Mapping(target = "title", source = "dto.userId")
+    DomainBoard from(BoardSaveRequestDto dto, Instant boardWriteAt);
 }

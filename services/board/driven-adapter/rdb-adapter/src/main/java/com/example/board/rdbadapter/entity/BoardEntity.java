@@ -11,7 +11,6 @@ import java.time.Instant;
 @NoArgsConstructor
 @Builder
 @EqualsAndHashCode(callSuper = false)
-@ToString
 @Data
 @Table(name = "board")
 public class BoardEntity extends BaseEntity {

@@ -1,6 +1,5 @@
 package com.example.board.usecase;
 
-import com.example.domain.DomainBoard;
 import com.example.board.readmodel.ReadModelBoard;
 import org.springframework.data.domain.Pageable;
 

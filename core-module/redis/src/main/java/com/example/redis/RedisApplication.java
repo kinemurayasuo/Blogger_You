@@ -2,8 +2,6 @@ package com.example.redis;
 
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +13,7 @@ import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactor
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.data.redis.support.collections.RedisProperties;
 
-import static com.example.common.support.ServerConstants.BASE_PACKAGE;
+import static com.example.support.ServerConstants.BASE_PACKAGE;
 
 @Configuration
 @RequiredArgsConstructor

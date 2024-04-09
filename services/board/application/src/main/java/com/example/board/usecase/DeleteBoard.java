@@ -1,6 +1,6 @@
 package com.example.board.usecase;
 
-import com.example.domain.DomainBoard;
+import com.example.board.domain.DomainBoard;
 
 import java.util.UUID;
 

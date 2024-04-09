@@ -1,6 +1,6 @@
 package com.example.board.exception;
 
-import com.example.common.support.exception.ErrorCode;
+import com.example.support.exception.ErrorCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 

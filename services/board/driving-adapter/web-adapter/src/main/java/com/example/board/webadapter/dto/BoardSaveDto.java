@@ -9,12 +9,12 @@ import java.util.UUID;
 public record BoardSaveDto() {
     @Builder
     public record BoardSaveRequestDto(
-            @NotNull
+            @NotBlank
+            String userId,
+            @NotBlank
             String title,
-            @NotNull
-            String content,
-            @NotNull
-            String boardName
+            @NotBlank
+            String content
     ) {}
     @Builder
     public record BoardSaveResponseDto(

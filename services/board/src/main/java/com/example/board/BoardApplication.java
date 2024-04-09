@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
-import static com.example.common.support.ServerConstants.BASE_PACKAGE;
+import static com.example.support.ServerConstants.BASE_PACKAGE;
 
 @SpringBootApplication(scanBasePackages = BASE_PACKAGE)
 @ConfigurationPropertiesScan(basePackages = BASE_PACKAGE)

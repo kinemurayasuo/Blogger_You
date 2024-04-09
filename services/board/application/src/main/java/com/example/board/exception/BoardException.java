@@ -1,7 +1,7 @@
 package com.example.board.exception;
 
-import com.example.common.support.exception.CustomException;
-import com.example.common.support.exception.ErrorCode;
+import com.example.support.exception.CustomException;
+import com.example.support.exception.ErrorCode;
 
 public class BoardException extends CustomException {
     public BoardException(ErrorCode errorCode) {
